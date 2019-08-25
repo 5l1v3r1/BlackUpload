@@ -44,7 +44,7 @@
 <div class="container pb-5 pt-5">
   <div class="card">
     <div class="card-header">
-      Supported Formars
+      Supported Formats
     </div>
     <div class="card-body">
             <div class="table-responsive">
@@ -58,7 +58,7 @@
 
                 <tbody>
                  <?php
-$extension=array("jpeg","jpg","png","gif","tiff","tga","psd","tif","bmp","tgz","bz2","iso","torrent","7z","ace","gtr","gz","tar","zip","rar","pps","docx","doc","pdf","ram","ra","rm","amr","wma","wmv","swf","flv","3ga","mov","m4a","acc","oga","aac","m4v","3g2","avi","3gp","mp4","mkv","apk","ogg","mp3","mpeg","ogm","dll","bat","exe");
+                  $extension=array("jpeg","jpg","png","gif","tiff","tga","psd","tif","bmp","tgz","bz2","iso","torrent","7z","ace","gtr","gz","tar","zip","rar","pps","docx","doc","pdf","ram","ra","rm","amr","wma","wmv","swf","flv","3ga","mov","m4a","acc","oga","aac","m4v","3g2","avi","3gp","mp4","mkv","apk","ogg","mp3","mpeg","ogm","dll","bat","exe");
                   foreach ($extension as $ext) {
                     echo "<tr>";
                           echo '<td>'.$ext.'</td>';
