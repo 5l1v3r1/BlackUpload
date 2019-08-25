@@ -81,7 +81,7 @@ function endsWith($haystack, $needle){
                     if (endsWith($file,"exe")) {
                     echo "<img class='img-fluid rounded'  width='250' height='250'  src='icons/exe.png'/>";
                     }
-                    if (endsWith($file,"png") || endsWith($file,"jpeg") || endsWith($file,"png") || endsWith($file,"gif")) {
+                    if (endsWith($file,"png") || endsWith($file,"jpeg") || endsWith($file,"jpg") || endsWith($file,"gif")) {
                         echo "<img class='img-fluid rounded border border-primary'  width='250' height='250'  src='$url/uploads/$file'/>";
                     } else {
                         echo"<img class='img-fluid rounded' src='icons/Document-Blank-icon.png'/>";
