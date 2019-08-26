@@ -1,8 +1,12 @@
 <?php
-$name = "Site Name";
-$description = "Your Website Description";
+// ------------------------------------------
+// [ Config Settings ]
+// ------------------------------------------
+$name = "BlackUpload";
+$description = "this is uploading service website";
 $tags = "upload,file upload,file uploading";
-$url = "http://localhost/upload";
+$url = "http://localhost/BlackUpload";
 $OwnerName = "Faris Mohammed";
-$email = "Admin Email";
+$email = "demo@xyz.com";
+// ------------------------------------------
 ?>

@@ -1,23 +1,26 @@
-<? include 'config.php'; ?>
+<?php
+include 'config.php';
+include 'ads.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-	<title><? echo $name ?> - About Us</title>
-  <meta name="description" content="<? echo $description ?>">
-  <meta name="author" content="<? echo $OwnerName ?>">
+	<title><?php echo $name ?> - About Us</title>
+  <meta name="description" content="<?php echo $description ?>">
+  <meta name="author" content="<?php echo $OwnerName ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="BlackUpload">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
   <meta name="designer" content="Black.Hacker">
   <meta name="copyright" content="DarkSoftwareCo">
-  <meta name="keywords" content="<? echo $tags ?>"/>
+  <meta name="keywords" content="<?php echo $tags ?>"/>
   <meta name="language" content="EN">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#"><? echo $name ?></a>
+  <a class="navbar-brand" href="#"><?php echo $name ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -34,7 +37,7 @@
         <a class="nav-link" href="about.php">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="mailto:<? echo $email?>">Report Abuse</a>
+        <a class="nav-link" href="mailto:<?php echo $email?>">Report Abuse</a>
       </li>
     </ul>
   </div>
@@ -63,9 +66,26 @@
 	</div>
 </div>
 
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="row pb-4">
+        <a href="<?php echo $ad1Link ?>"><img class="img-fluid rounded" src="<?php echo $ad1Image ?>" /></a>
+      </div>
+      <div class="row pl-5 pb-4">
+        <a href="<?php echo $ad2Link ?>"><img class="img-fluid rounded" src="<?php echo $ad2Image ?>" /></a>
+      </div>
+      <div class="row pl-5 pb-4">
+        <a href="<?php echo $ad3Link ?>"><img class="img-fluid rounded" src="<?php echo $ad3Image ?>" /></a>
+      </div>
+      <div class="row pl-5 pb-4">
+        <a href="<?php echo $ad4Link ?>"><img class="img-fluid rounded" src="<?php echo $ad4Image ?>" /></a>
+      </div>
+    </div>
+  </div>
+
   <footer class="py-5 bg-primary">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; <? echo $name ?> - 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; <?php echo $name ?> - 2019</p>
     </div>
     <!-- /.container -->
   </footer>
