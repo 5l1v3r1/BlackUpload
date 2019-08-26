@@ -13,5 +13,8 @@ BlackUpload is Databaseless and Anonymus File Uploader Script with Multi File Up
 
 ![](https://i.imgur.com/brUNJDn.png)
 
+# Note
+Make Uploads Folder Writeble ``` chmod 777 uploads ```
+
 # Copyright
 Developed By: Black.Hacker@DarkSoftwareCo
