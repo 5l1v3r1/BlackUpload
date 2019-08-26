@@ -79,7 +79,7 @@ function endsWith($haystack, $needle){
                   foreach ($array as $file) {
                     echo "<div class='form-group'>";
                     if (endsWith($file,"exe")) {
-                    echo "<img class='img-fluid rounded'  width='250' height='250'  src='icons/exe.png'/>";
+                    echo "<img class='img-fluid rounded'  width='250' height='250'  src='icons/EXE.png'/>";
                     }
                     if (endsWith($file,"png") || endsWith($file,"jpeg") || endsWith($file,"jpg") || endsWith($file,"gif")) {
                         echo "<img class='img-fluid rounded border border-primary'  width='250' height='250'  src='$url/uploads/$file'/>";
@@ -90,11 +90,6 @@ function endsWith($haystack, $needle){
                     echo "<div class='pt-1'></div>
                         <div class='row justify-content-center text-center'>
                         <input class='form-control col-9 justify-content-center text-center border border-dark' value='$url/uploads/$file'/>
-                        </div>
-
-                        <div class='pt-1'></div>
-                        <div class='row justify-content-center text-center'>
-                            <input class='form-control col-9 justify-content-center text-center border border-dark' value='$url/action.php?action=delete&name=$file&token=$token'/>
                         </div>";
                     echo '</div>';
                 }
