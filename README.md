@@ -5,7 +5,7 @@ Anonymus File Uploader Software
 BlackUpload is Databaseless and Anonymus File Uploader Script with Multi File Upload Support
 
 # Screenshots
-![](https://i.imgur.com/i6pVsCJ.png)
+![](https://i.imgur.com/8HcO0Pg.png)
 
 ![](https://i.imgur.com/fkfmHmT.png)
 
