@@ -6,7 +6,7 @@ include 'ads.php';
 <html>
 <head>
   <meta charset="UTF-8">
-	<title><?php echo $name ?> - File Uploading Service</title>
+  <title><?php echo $name ?> - File Uploading Service</title>
   <meta name="description" content="<?php echo $description ?>">
   <meta name="author" content="<?php echo $OwnerName ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@ include 'ads.php';
   <meta name="copyright" content="DarkSoftwareCo">
   <meta name="keywords" content="<?php echo $tags ?>"/>
   <meta name="language" content="EN">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -46,14 +46,9 @@ include 'ads.php';
 <div class="container pb-5 pt-5">
   <div class="row justify-content-center text-center">
     <div class="col-8">
-      <?php
-      if (isset($_GET['msg'])) {
-        echo '<div class="alert alert-success">Your File has been removed</div>';
-      }
-      ?>
       <div class="card">
         <div class="card-header">
-          Uploads Your Files
+          Upload Your Files
         </div>
         <div class="card-body">
           <h4 class="card-title">Select Files</h4>
