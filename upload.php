@@ -8,7 +8,6 @@ $array = [];
 if (isset($_POST['submit'])) {
   if (isset($_FILES['item_file'])) {
       foreach ($_FILES['item_file']['error'] as $key => $error) {
-      $salt = uniqid(rand(),true);
       $ext = strtolower(pathinfo($_FILES['item_file']['name'][$key],PATHINFO_EXTENSION));
       if ($error == UPLOAD_ERR_OK) {
         if (in_array($ext, $extension)) {        
@@ -83,7 +82,7 @@ function getMime($name){
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.php"><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php"><span class="fa fa-home"></span> Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="terms.php"><span class="fa fa-file-text"></span> Terms of Services</a>
