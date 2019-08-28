@@ -3,18 +3,22 @@ include 'configuration/config.php';
 include 'configuration/ads.php';
 include 'configuration/socialmedia.php';
 
-if (isset($_POST['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $fname = isset($_POST['firstname']) ? $_POST['firstname']: '';
     $lname = isset($_POST['lastname']) ? $_POST['lastname']: '';
     $name = $fname.' '.$lname;
-    $email = isset($_POST['email']) ? $_POST['email']: '';
+    $uEmail = isset($_POST['email']) ? $_POST['email']: '';
     $subject = isset($_POST['subject']) ? $_POST['subject']: '';
     $message = isset($_POST['message']) ? $_POST['message']: '';
 
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    $headers .= ='From: '.$OwnerName.'<'.$email.'>';
-    mail($email, $subject, $message, $headers);
+    $headers .= "From: '.$name.'<'.$uEmail.'>\r\n";
+    if (mail($email, $subject, $message, $headers)) {
+        $ok = "Thank you for keeping our service safe.";
+    } else {
+        $error = "Somthing wrong happend !";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -69,6 +73,15 @@ if (isset($_POST['submit'])) {
           <b>Report Abuse</b>
         </div>
         <div class="card-body">
+          <div class="container">
+            <?php 
+              if (isset($ok)) {
+                echo "<div class='alert alert-success'>".$ok."</div>";
+              } elseif(isset($error)) {
+                echo "<div class='alert alert-danger'>".$error."</div>";
+              }
+            ?>
+          </div>
           <form role="form" method="POST">
           	<div class="form-row justify-content-center text-center">
           	   <div class="col-4">
@@ -95,7 +108,7 @@ if (isset($_POST['submit'])) {
           			<textarea class="form-control" name="message" id="message" rows="5">Your Message</textarea>
           		</div>
           	</div>
-          	<button type="submit" id="submit" class="btn btn-primary rounded">Send Report</button>
+          	<button type="submit" id="submit" name="submit" class="btn btn-primary rounded">Send Report</button>
           </form>
         </div>
       </div>
