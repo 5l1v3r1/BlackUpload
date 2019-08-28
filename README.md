@@ -5,15 +5,21 @@ Anonymus File Uploader Software
 BlackUpload is Databaseless and Anonymus File Uploader Script with Multi File Upload Support
 
 # Screenshots
-![](https://i.imgur.com/8HcO0Pg.png)
+![](https://i.imgur.com/i7SnEwa.png)
 
-![](https://i.imgur.com/fkfmHmT.png)
+![](https://i.imgur.com/pWKDo6V.png)
 
-![](https://i.imgur.com/8fqxx8C.png)
+![](https://i.imgur.com/mqGnodq.png)
+
+![](https://i.imgur.com/JdKxCxJ.png)
+
+![](https://i.imgur.com/DZND3lv.png)
 
 ![](https://i.imgur.com/brUNJDn.png)
 
-![Ads](https://i.imgur.com/IY2JT7Q.png)
+![](https://i.imgur.com/W7t2mSw.png)
+
+![](https://i.imgur.com/nWiwh6C.png)
 
 # Note
 Make Uploads Folder Writeble ``` chmod 777 uploads ```
