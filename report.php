@@ -4,7 +4,17 @@ include 'configuration/ads.php';
 include 'configuration/socialmedia.php';
 
 if (isset($_POST['submit'])) {
-	
+    $fname = isset($_POST['firstname']) ? $_POST['firstname']: '';
+    $lname = isset($_POST['lastname']) ? $_POST['lastname']: '';
+    $name = $fname.' '.$lname;
+    $email = isset($_POST['email']) ? $_POST['email']: '';
+    $subject = isset($_POST['subject']) ? $_POST['subject']: '';
+    $message = isset($_POST['message']) ? $_POST['message']: '';
+
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+    $headers .= ='From: '.$OwnerName.'<'.$email.'>';
+    mail($email, $subject, $message, $headers);
 }
 ?>
 <!DOCTYPE html>
@@ -74,15 +84,15 @@ if (isset($_POST['submit'])) {
           		</div>
 
           		<div class="form-group col-8">
-          			<input type="email" name="email" class="form-control" placeholder="Email Address">
+          			<input type="email" name="email" id="subject" class="form-control" placeholder="Email Address">
           		</div>
 
           		<div class="form-group col-8">
-          			<input type="email" name="email" class="form-control" placeholder="Subject">
+          			<input type="subject" name="subject" id="subject" class="form-control" placeholder="Subject">
           		</div>
 
           		<div class="form-group col-8">
-          			<textarea class="form-control" rows="5">Your Message</textarea>
+          			<textarea class="form-control" name="message" id="message" rows="5">Your Message</textarea>
           		</div>
           	</div>
           	<button type="submit" id="submit" class="btn btn-primary rounded">Send Report</button>
