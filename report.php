@@ -2,26 +2,29 @@
 include 'configuration/config.php';
 include 'configuration/ads.php';
 include 'configuration/socialmedia.php';
+
+if (isset($_POST['submit'])) {
+	
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title><?php echo $name ?> - Supported Formats</title>
-  <meta name="description" content="<?php echo $description ?>">
-  <meta name="author" content="<?php echo $OwnerName ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="application-name" content="BlackUpload">
-  <link rel="shortcut icon" type="image/png" href="favicon.png" />
-  <meta name="designer" content="Black.Hacker">
-  <meta name="copyright" content="DarkSoftwareCo">
-  <meta name="keywords" content="<?php echo $tags ?>"/>
-  <meta name="language" content="EN">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/litera/bootstrap.min.css">
-  <link rel="stylesheet" href="src/css/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="src/css/custom.css">
+	<title><?php echo $name; ?> - Report Abuse</title>
+    <meta http-equiv="content-language" content="en">
+    <meta name="description" content="<?php echo $description ?>">
+    <meta name="author" content="<?php echo $OwnerName ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="BlackUpload">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <meta name="designer" content="Black.Hacker">
+    <meta name="copyright" content="DarkSoftwareCo">
+    <meta name="keywords" content="<?php echo $tags ?>"/>
+    <meta name="language" content="EN">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/litera/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/custom.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -41,7 +44,7 @@ include 'configuration/socialmedia.php';
       <li class="nav-item">
         <a class="nav-link" href="about.php"><span class="fa fa-user"></span>  About Us</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="report.php"><span class="fa fa-flag"></span> Report Abuse</a>
       </li>
     </ul>
@@ -49,37 +52,46 @@ include 'configuration/socialmedia.php';
 </nav>
 
 <div class="container pb-5 pt-5">
-  <div class="card">
-    <div class="card-header">
-      Supported Formats
-    </div>
-    <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Format</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
+  <div class="row justify-content-center text-center">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-header">
+          <b>Report Abuse</b>
+        </div>
+        <div class="card-body">
+          <form role="form" method="POST">
+          	<div class="form-row justify-content-center text-center">
+          	   <div class="col-4">
+          		<div class="form-group">
+          			<input class="form-control" type="text" name="firstname" id="firstname" placeholder="First Name">
+          		  </div>
+          		</div>
 
-                <tbody>
-                 <?php
-                  $extension = array("jpeg","jpg","png","gif","ai","eps","ps","svg","webp","ico","tiff","tga","psd","tif","bmp","bz2","iso","torrent","7z","ace","tar","zip","rar","jar","pps","ppsx","docx","doc","pdf","ram","ra","rm","amr","wma","wmv","swf","flv","mov","m4a","acc","oga","aac","m4v","3g2","avi","3gp","mp4","mkv","apk","ogg","mp3","mpeg","ogm","dll","bat","exe","xls","xlsx","odt","ods");
-                  foreach ($extension as $ext) {
-                    echo "<tr>";
-                          echo '<td>'.$ext.'</td>';
-                          echo '<td>Allowed</td>';
-                    echo '</tr>';   
-                  }
-                ?>
-                </tbody>
-              </table>
-            </div>
+          		<div class="col-4">
+          		<div class="form-group">
+          			<input class="form-control" type="text" name="lastname" id="lastname" placeholder="Last Name">
+          		 </div>
+          		</div>
+
+          		<div class="form-group col-8">
+          			<input type="email" name="email" class="form-control" placeholder="Email Address">
+          		</div>
+
+          		<div class="form-group col-8">
+          			<input type="email" name="email" class="form-control" placeholder="Subject">
+          		</div>
+
+          		<div class="form-group col-8">
+          			<textarea class="form-control" rows="5">Your Message</textarea>
+          		</div>
+          	</div>
+          	<button type="submit" id="submit" class="btn btn-primary rounded">Send Report</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="row pb-4">
@@ -96,8 +108,8 @@ include 'configuration/socialmedia.php';
       </div>
     </div>
   </div>
-  
-  <footer class="py-5 bg-primary">
+
+    <footer class="py-5 bg-primary">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; <?php echo $name." - ".date('Y') ?></p>
       <div data-aos="slide-up">
@@ -114,17 +126,9 @@ include 'configuration/socialmedia.php';
     </div>
     <!-- /.container -->
   </footer>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script src="src/js/dataTables.bootstrap4.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-    $('#dataTable').DataTable();
-  });
-  </script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
-<?php
-include 'config.php';
-include 'ads.php';
+<?php 
+include 'configuration/config.php';
+include 'configuration/ads.php';
+include 'configuration/socialmedia.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +17,10 @@ include 'ads.php';
   <meta name="copyright" content="DarkSoftwareCo">
   <meta name="keywords" content="<?php echo $tags ?>"/>
   <meta name="language" content="EN">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/litera/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="src/css/custom.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -28,16 +32,16 @@ include 'ads.php';
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php"><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="terms.php">Terms of Services</a>
+        <a class="nav-link" href="terms.php"><span class="fa fa-file-text"></span> Terms of Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="about.php">About Us</a>
+        <a class="nav-link" href="about.php"><span class="fa fa-user"></span>  About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="mailto:<?php echo $email?>">Report Abuse</a>
+        <a class="nav-link" href="report.php"><span class="fa fa-flag"></span> Report Abuse</a>
       </li>
     </ul>
   </div>
@@ -109,18 +113,24 @@ include 'ads.php';
 
   <footer class="py-5 bg-primary">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; <?php echo $name ?> - 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; <?php echo $name." - ".date('Y') ?></p>
+      <div data-aos="slide-up">
+        <div class="container text-center pt-3 h6">
+            <ul class="list-inline">
+              <li class="list-inline-item circle"><a href="<?php echo $twitter ?>"><i class="onhover fa fa-twitter fa-stack circle-twitter"></i></a></li>
+              <li class="list-inline-item circle"><a href="<?php echo $facebook ?>"><i class="onhover fa fa-facebook fa-stack circle-facebook"></i></a></li>
+              <li class="list-inline-item circle"><a href="<?php echo $linkedin ?>"><i class="onhover fa fa-linkedin fa-stack circle-linkedin"></i></a></li>
+              <li class="list-inline-item circle"><a href="<?php echo $instagram ?>"><i class="onhover fa fa-instagram fa-stack circle-instagram"></i></a></li>
+              <li class="list-inline-item circle"><a href="<?php echo $snapchat ?>"><i class="onhover fa fa-snapchat-ghost fa-stack circle-snapchat"></i></a></li>
+            </ul>
+        </div>  
+      </div>
     </div>
     <!-- /.container -->
   </footer>
-<script type="text/javascript">
-  function  add_more() {
-  var txt = "<input type=\"file\" class=\"form-control-file pt-3\" id=\"item_file[]\" name=\"item_file[]\" multiple=\"multiple\">";
-   $("#dvFile").append(txt);
-}
-</script>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
 </html>
