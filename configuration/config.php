@@ -7,6 +7,6 @@ $description = "this is uploading service website";
 $tags = "upload,file upload,file uploading";
 $url = "http://localhost/BlackUpload";
 $OwnerName = "Faris";
-$email = "admin@xed.xyz";
+$email = "farisksa79@gmail.com";
 // ------------------------------------------
 ?>

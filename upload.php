@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
               $filesize = $_FILES['item_file']['size'][$key];
               $type =  getMime($tmpName);
             if (in_array($type,$mime_types)) {
-             if ($filesize > 1024) {
+             if ($filesize >= 1024) {
               if (is_uploaded_file($tmpName)) {
                   move_uploaded_file($tmpName, "uploads/".$filename);
                   array_push($array, $filename);

@@ -22,6 +22,7 @@ include 'configuration/socialmedia.php';
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="src/css/custom.css">
+  <link rel="stylesheet" type="text/css" href="src/css/fileicon.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -58,19 +59,26 @@ include 'configuration/socialmedia.php';
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
+                    <th>#</th>
+                    <th>Icon</th>
                     <th>Format</th>
+                    <th>Maximum Size</th>
                     <th>Status</th>
                   </tr>
                 </thead>
 
                 <tbody>
                  <?php
+                 $count = 1;
                   $extension = array("jpeg","jpg","png","gif","ai","eps","ps","svg","webp","ico","tiff","tga","psd","tif","bmp","bz2","iso","torrent","7z","ace","tar","zip","rar","jar","pps","ppsx","docx","doc","pdf","ram","ra","rm","amr","wma","wmv","swf","flv","mov","m4a","acc","oga","aac","m4v","3g2","avi","3gp","mp4","mkv","apk","ogg","mp3","mpeg","ogm","dll","bat","exe","xls","xlsx","odt","ods");
                   foreach ($extension as $ext) {
                     echo "<tr>";
-                          echo '<td>'.$ext.'</td>';
-                          echo '<td>Allowed</td>';
-                    echo '</tr>';   
+                    	  echo '<td class="font-weight-bold">'.$count.'</td>';
+                          echo '<td class="font-weight-bold">'.$ext.'</td>';
+                          echo '<td class="font-weight-bold">50 MB</td>';
+                          echo '<td class="font-weight-bold">Allowed</td>';
+                    echo '</tr>';
+                    $count++;
                   }
                 ?>
                 </tbody>
