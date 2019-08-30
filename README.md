@@ -19,7 +19,7 @@ BlackUpload is Databaseless and Anonymus File Uploader Script with Multi File Up
 
 ![](https://i.imgur.com/DZND3lv.png)
 
-![](https://i.imgur.com/lseHWRz.png)
+![](https://i.imgur.com/TTaTTGo.png)
 
 ![](https://i.imgur.com/W7t2mSw.png)
 
