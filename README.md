@@ -13,6 +13,8 @@ BlackUpload is Databaseless and Anonymus File Uploader Script with Multi File Up
 
 ![](https://i.imgur.com/mqGnodq.png)
 
+![](https://i.imgur.com/hU9ygMP.png)
+
 ![](https://i.imgur.com/JdKxCxJ.png)
 
 ![](https://i.imgur.com/DZND3lv.png)
@@ -30,12 +32,18 @@ Make Uploads Folder Writeble ``` chmod 777 uploads ```
 
 # What's New
 ```
-v1.5
- - New Look
- - Full Security [ Check MIME, Deny Access to uploads, Check file size, check if is uploaded ]
- - Report Abuse Page
- - Social Meda Links in footer
- - Ads banners
+v2.0
+  1. New Website Look
+  2. Full Security
+      - Check MIME
+      - Deny Access to uploads
+      - Check if file size > 1025
+      - check if file is uploaded
+  3. Report Abuse Page
+  4. Social Meda Links in footer
+  5. Ads banners
+  6. download.php Page to limit direct access
+  
 ```
 # Copyright
 Developed By: Black.Hacker@DarkSoftwareCo
