@@ -75,7 +75,7 @@ include 'configuration/socialmedia.php';
                     echo "<tr>";
                     	  echo '<td class="font-weight-bold">'.$count.'</td>';
                           echo '<td class="font-weight-bold">'.$ext.'</td>';
-                          echo '<td class="font-weight-bold">50 MB</td>';
+                          echo '<td class="font-weight-bold">Unmetered</td>';
                           echo '<td class="font-weight-bold">Allowed</td>';
                     echo '</tr>';
                     $count++;
