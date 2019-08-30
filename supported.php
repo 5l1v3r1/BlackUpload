@@ -60,7 +60,6 @@ include 'configuration/socialmedia.php';
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Icon</th>
                     <th>Format</th>
                     <th>Maximum Size</th>
                     <th>Status</th>
