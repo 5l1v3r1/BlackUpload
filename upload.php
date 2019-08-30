@@ -5,8 +5,9 @@ include 'configuration/socialmedia.php';
 include 'configuration/mime.php';
 $extension = array("jpeg","jpg","png","gif","ai","eps","ps","svg","webp","ico","tiff","tga","psd","tif","bmp","bz2","iso","torrent","7z","ace","tar","zip","rar","jar","pps","ppsx","docx","doc","pdf","ram","ra","rm","amr","wma","wmv","swf","flv","mov","m4a","acc","oga","aac","m4v","3g2","avi","3gp","mp4","mkv","apk","ogg","mp3","mpeg","ogm","dll","bat","exe","xls","xlsx","odt","ods");
 $array = [];
-if (isset($_POST['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if (isset($_FILES['item_file'])) {
+  	if(!empty($_FILES["item_file"])){
       foreach ($_FILES['item_file']['error'] as $key => $error) {
       $ext = strtolower(pathinfo($_FILES['item_file']['name'][$key],PATHINFO_EXTENSION));
       if ($error == UPLOAD_ERR_OK) {
@@ -21,20 +22,15 @@ if (isset($_POST['submit'])) {
               if (is_uploaded_file($tmpName)) {
                   move_uploaded_file($tmpName, "uploads/".$filename);
                   array_push($array, $filename);
-              } else {
-                $errormsg = "We couldn't upload some files";  
               }
              } else {
-               $errormsg = "We couldn't upload some files"; 
+               $errormsg = "We couldn't upload some files";
              }
-            } else {
-              $errormsg = "We couldn't upload some files"; 
             }
-         } else {
-           $errormsg = "We couldn't upload some files"; 
+          }
         }
       }
-    }
+  	}
   }
 }
 
@@ -137,7 +133,7 @@ function getMime($name){
                     }
                     echo "<div class='pt-1'></div>
                             <div class='row justify-content-center text-center'>
-                            <input class='form-control col-9 justify-content-center text-center border border-dark' value='$url/uploads/$file'/>
+                            <input class='form-control col-9 justify-content-center text-center border border-dark' value='$url/download.php?name=$file'/>
                           </div>";
                     echo '</div>';
               }
@@ -184,9 +180,9 @@ function getMime($name){
     <!-- /.container -->
   </footer>
   
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
 </body>
 </html>
