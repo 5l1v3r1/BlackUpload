@@ -40,7 +40,7 @@ v2.0
       - Check if file size > 1025
       - check if file is uploaded
   3. Report Abuse Page
-  4. Social Meda Links in footer
+  4. Social Media Links in footer
   5. Ads banners
   6. download.php Page to limit direct access
   
