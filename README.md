@@ -45,5 +45,10 @@ v2.0
   6. download.php Page to limit direct access
   
 ```
+# To-Do List
+```
+ 1. Database Structured
+ 2. Simple and Secure Dashboard to control uploads
+```
 # Copyright
 Developed By: Black.Hacker@DarkSoftwareCo
